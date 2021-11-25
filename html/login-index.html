@@ -20,28 +20,30 @@
 
     <div class="container  ">
         <div class="row wrapper g-0 ">
-            <img src="../images/todo.jpg" class="col-md-6 " alt="">
+            <img src="../images/todo.jpg" class="col-lg-6  col-md-7 " alt="">
 
-            <form class="login-form bg-light col-md-6 px-3 py-5 ">
+            <form class="login-form bg-light col-lg-6 col-md-5 px-3 py-5 " action="./main.html" id="login">
                 <h2>LOGIN</h2>
                 <div class="form-field mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Email address</label>
-                  <input type="email" class="form-control " autocomplete="off" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <label for="exampleInputUsername1" class="form-label">Username</label>
+                  <input type="text" class="form-control "  placeholder="Enter your username "autocomplete="off" id="exampleInputUsername1">
                   <i class="fas fa-check-circle success-icon"></i>
                   <i class="fas fa-exclamation-circle failure-icon"></i>
-                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                  <small></small>
+                  
                 </div>
                 <div class="form-field mb-3">
                   <label for="exampleInputPassword1" class="form-label">Password</label>
-                  <input type="password" class="form-control" autocomplete="off" id="exampleInputPassword1">
+                  <input type="password" class="form-control" placeholder="Enter your password " autocomplete="off" id="exampleInputPassword1">
                   <i class="fas fa-check-circle success-icon"></i>
                   <i class="fas fa-exclamation-circle failure-icon"></i>
+                  <small></small>
                 </div>
                 <div class="mb-3 form-check">
                   <input type="checkbox" class="form-check-input" id="exampleCheck1">
                   <label class="form-check-label" for="exampleCheck1">Check me out</label>
                 </div>
-                <button type="submit" class="btn btn-dark">Login</button>
+                <button type="submit" class="btn btn-dark" id>Login</button>
             </form>
     
             

@@ -1,13 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
 * {
   margin: 0px;
   padding: 0px;
 }
 body {
-  background-image: linear-gradient(rgb(157, 182, 206), rgb(87, 45, 81));
-  background-repeat: no-repeat;
+  font-family: "Roboto", sans-serif;
 }
 .row {
-  box-shadow: 2px 8px 5px 3px rgb(155, 144, 144);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
   border-radius: 20px;
   transform: translateY(20%);
 }
@@ -17,6 +18,17 @@ img {
 }
 .form-field {
   position: relative;
+}
+.form-field.error input {
+  border-color: red;
+}
+
+.form-field.success input {
+  border-color: green;
+}
+
+.form-field small {
+  color: red;
 }
 .success-icon,
 .failure-icon {
