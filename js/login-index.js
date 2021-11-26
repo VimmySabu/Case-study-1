@@ -9,13 +9,9 @@ const checkUsername =() =>{
     let valid=false;
     const uname=username.value.trim()
 
-    if(!isRequired(uname)){
-        showError(username,"Username cannot be blank")
-        failureIcon[0].style.opacity = "1";
-        successIcon[0].style.opacity = "0";
-    }
+   
 
-    else if(uname!="admin"){
+    if(uname!="admin"){
         showError(username,"Username is not valid")
         failureIcon[0].style.opacity = "1";
         successIcon[0].style.opacity = "0";
@@ -36,14 +32,9 @@ const checkPassword =() =>{
     let valid=false;
     const pwd=password.value.trim()
 
-    if(!isRequired(pwd)){
-        showError(password,"Password cannot be blank")
-        failureIcon[1].style.opacity = "1";
-        successIcon[1].style.opacity = "0";
-
-    }
-    else if(pwd!="12345"){
-        showError(password,"Pawword is not valid")
+    
+    if(pwd!="12345"){
+        showError(password,"Password is not valid")
         failureIcon[1].style.opacity = "1";
         successIcon[1].style.opacity = "0";
     }
@@ -58,7 +49,7 @@ const checkPassword =() =>{
 
 }
 
-const isRequired=value =>value=""?false:true;
+
 
 const showError=(input,message)=>{
     const formfieid=input.parentElement;
