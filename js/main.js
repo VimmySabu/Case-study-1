@@ -18,6 +18,7 @@ xHTTP.onreadystatechange=function(){
             const inp=document.createElement("input")//create checkbox 
             inp.setAttribute("type","checkbox")
             inp.setAttribute("id","check")
+            inp.setAttribute("data-myattribute",i)
             inp.style.marginRight="20px"
 
             const img=document.createElement("span")
@@ -30,9 +31,11 @@ xHTTP.onreadystatechange=function(){
             li.appendChild(img)
             ul.appendChild(li)
 
+            
+
 
             if(item[i].completed==true){
-                //inp.style.visibility="hidden"
+                inp.style.visibility="hidden"
                 li.style.backgroundColor="rgb(240, 231, 231)"
                 li.style.textDecoration="line-through"
                 li.style.textDecorationColor="red"
@@ -60,25 +63,55 @@ xHTTP.onreadystatechange=function(){
                 
             })
 
-             //select all button
-             const all=document.getElementById("all")
-             all.addEventListener("click",()=>inp.checked=true)
+            //select all button
+            const all=document.getElementById("all")
+            all.addEventListener("click",()=>inp.checked=true)
  
  
-             //clear selected button
-             const clear=document.getElementById("clear")
-             clear.addEventListener("click",()=>{
-                 if(inp.checked){
-                     li.remove()
-                 }
-             })
+            //clear selected button
+            const clear=document.getElementById("clear")
+            clear.addEventListener("click",()=>{
+                if(inp.checked){
+                    li.remove()
+                }
+            })
 
 
             
-           
-
+        
         
         }
+
+        var chks = ul.getElementsByTagName("input");
+       
+        
+        const arr=[]
+        for (var i = 0; i < chks.length; i++) {
+            //console.log(chks[i].checked)
+            chks[i].addEventListener('change', (e)=>{
+
+              
+                var attribute=e.target.getAttribute("data-myattribute")
+                arr.push(attribute)
+
+                
+                console.log(arr)
+                if(arr.length==5){
+                    alert("Congrats!!!You have completed 5 tasks")
+                }
+                
+
+            });
+            
+        }
+        
+
+          
+
+
+
+
+
          //add new item
         add.addEventListener("click",()=>{
             const myIn=document.getElementById("myInput")
@@ -94,6 +127,7 @@ xHTTP.onreadystatechange=function(){
                 const inp=document.createElement("input")//create checkbox 
                 inp.setAttribute("type","checkbox")
                 inp.setAttribute("id","check")
+                inp.setAttribute("data-myattribute",i++)
                 inp.style.marginRight="20px"
 
                 const img=document.createElement("span")
@@ -104,6 +138,7 @@ xHTTP.onreadystatechange=function(){
                 li.appendChild(inp)
                 li.appendChild(liIetm)
                 li.appendChild(img)
+               // ul.appendChild(li)
                 ul.insertBefore(li,ul.firstChild)
                 
 
@@ -142,8 +177,22 @@ xHTTP.onreadystatechange=function(){
 
 
             }
+
+            
             
         })
+
+       
+        
+
+        
+        
+        
+
+
+
+
+        
        
 
        
