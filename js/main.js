@@ -77,33 +77,61 @@ xHTTP.onreadystatechange=function(){
             })
 
 
+        
+                
+                
+        }
+
+        function getData(){
+            var chks = ul.getElementsByTagName("input");
+            
+            
+            const arr=[]
+            for (var i = 0; i < chks.length; i++) {
+                //console.log(c)
+                chks[i].addEventListener('change', (e)=>{
+                    
+                        
+                    
+                    
+
+                
+                    var attribute=e.target.getAttribute("data-myattribute")
+                    arr.push(attribute)
+
+                    
+                    
+                    if(arr.length==5){
+                        alert("Congrats!!!You have completed 5 tasks")
+
+                        arr.length=0
+                    }
+
+                    
+                });
+                
+                
+            }
+        }
+
+        getData()
+
+           
+        
+        
+
+
+           
+
+
             
         
         
-        }
-
-        var chks = ul.getElementsByTagName("input");
-       
         
-        const arr=[]
-        for (var i = 0; i < chks.length; i++) {
-            //console.log(chks[i].checked)
-            chks[i].addEventListener('change', (e)=>{
 
-              
-                var attribute=e.target.getAttribute("data-myattribute")
-                arr.push(attribute)
+        
 
-                
-                console.log(arr)
-                if(arr.length==5){
-                    alert("Congrats!!!You have completed 5 tasks")
-                }
-                
-
-            });
-            
-        }
+        
         
 
           
@@ -113,7 +141,7 @@ xHTTP.onreadystatechange=function(){
 
 
          //add new item
-        add.addEventListener("click",()=>{
+       /* add.addEventListener("click",()=>{
             const myIn=document.getElementById("myInput")
             if(myIn.value.trim()==""){
                 alert("Enter an item")
@@ -138,7 +166,7 @@ xHTTP.onreadystatechange=function(){
                 li.appendChild(inp)
                 li.appendChild(liIetm)
                 li.appendChild(img)
-               // ul.appendChild(li)
+                //ul.appendChild(li)
                 ul.insertBefore(li,ul.firstChild)
                 
 
@@ -173,14 +201,16 @@ xHTTP.onreadystatechange=function(){
                         li.remove()
                     }
                 })
+            
 
 
 
             }
+            //getData()
 
             
             
-        })
+        })*/
 
        
         
