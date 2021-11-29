@@ -70,24 +70,32 @@ const showSuccess=(input)=>{
     error.textContent = '';
 }
 
-form.addEventListener('submit', function (e) {
-    // prevent the form from submitting
-    e.preventDefault();
-
+function formValidation(){
     // validate fields
     let isUsernameValid = checkUsername(),
-        isPasswordValid = checkPassword();
+    isPasswordValid = checkPassword();
 
     let isFormValid = isUsernameValid && isPasswordValid;
-        
+    
 
     // submit to the server if the form is valid
     if (isFormValid) {
         //console.log(isFormValid);
         window.location.href=form.getAttribute("action")
     }
-        
-});
+
+
+}
+
+form.addEventListener('submit', (e) => {
+        // prevent the form from submitting
+        e.preventDefault()
+
+        formValidation()
+
+
+    });
+
 
 const debounce = (fn, delay = 500) => {
     let timeoutId;

@@ -21,10 +21,12 @@ img {
 }
 .form-field.error input {
   border-color: red;
+  border-width: 2px;
 }
 
 .form-field.success input {
   border-color: green;
+  border-width: 2px;
 }
 
 .form-field small {

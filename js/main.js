@@ -102,7 +102,7 @@ xHTTP.onreadystatechange=function(){
                     
                     
                     if(arr.length==5){
-                        alert("Congrats!!!You have completed 5 tasks")
+                        alert( "Congrats. 5 Tasks have been Successfully Completed")
 
                         arr.length=0
                     }
